@@ -1,0 +1,268 @@
+*{
+    font-family: "Tagesschrift";
+}
+
+:root {
+    --pastel-purple: #bdb2ff;
+    --pastel-blue: #a0c4ff;
+    --pastel-green: #caffbf;
+    --pastel-pink: #ffd6e0;
+    --pastel-yellow: #fdffb6;
+    --main-bg: #f8f7ff;
+    --text-dark: #22223b;
+    --text-light: #5f5f7a;
+}
+
+body {
+    background: linear-gradient(135deg, var(--pastel-pink), var(--pastel-blue), var(--pastel-green));
+    min-height: 100vh;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.login-container, .main-container {
+    background: var(--main-bg);
+    padding: 2.5rem 2rem 2rem 2rem;
+    border-radius: 2rem;
+    box-shadow: 0 8px 32px 0 rgba(60, 60, 120, 0.1);
+    width: 380px;
+    text-align: center;
+    transition: box-shadow 0.2s;
+}
+
+.login-container h2 {
+    color: var(--pastel-purple);
+    margin-bottom: 1.4rem;
+}
+
+.login-container input {
+    width: 90%;
+    padding: 0.7rem;
+    margin: 0.7rem 0;
+    border: 1.5px solid var(--pastel-blue);
+    border-radius: 1.2rem;
+    background: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.login-container input:focus {
+    border-color: var(--pastel-purple);
+}
+
+.login-container button {
+    width: 100%;
+    padding: 0.8rem;
+    background: linear-gradient(90deg, var(--pastel-purple), var(--pastel-blue));
+    color: white;
+    border: none;
+    border-radius: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.2s;
+}
+
+.login-container button:hover {
+    background: linear-gradient(90deg, var(--pastel-blue), var(--pastel-purple));
+}
+
+.tab-switch {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tab-switch button {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: var(--pastel-blue);
+    padding: 0.4rem 1.2rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.tab-switch button.active, .tab-switch button:hover {
+    background: var(--pastel-purple);
+    color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+header h1 {
+    color: var(--pastel-purple);
+    font-size: 2rem;
+    margin: 0;
+}
+
+#welcome {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+#settingsBtn, #logoutBtn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--pastel-blue);
+    cursor: pointer;
+    transition: color 0.2s;
+    position:relative ;
+    left: 20px; 
+}
+
+#settingsBtn:hover, #logoutBtn:hover {
+    color: var(--pastel-purple);
+}
+
+.timer-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    
+}
+
+.circle-timer {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+}
+
+.circle-timer svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#progressCircle {
+    stroke-dasharray: 628;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.5s linear;
+}
+
+.timer-text {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8rem;
+    color: var(--text-dark);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.controls button {
+    padding: 0.8rem 2.2rem;
+    border: none;
+    border-radius: 2rem;
+    background: linear-gradient(90deg, var(--pastel-purple), var(--pastel-blue));
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background 0.2s;
+}
+
+.controls button:hover {
+    background: linear-gradient(90deg, var(--pastel-blue), var(--pastel-purple));
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0; top: 0; width: 100vw; height: 100vh;
+    background: rgba(180, 180, 255, 0.22);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: #fff;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    width: 320px;
+    box-shadow: 0 8px 32px 0 rgba(60, 60, 120, 0.14);
+    position: relative;
+    text-align: left;
+}
+
+.close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.6rem;
+    color: var(--pastel-purple);
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    color: var(--pastel-purple);
+    margin-bottom: 1.5rem;
+}
+
+#settingsForm label {
+    display: block;
+    color: var(--text-light);
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+    font-size: 1rem;
+}
+
+#settingsForm input[type="number"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1.5px solid var(--pastel-blue);
+    border-radius: 1rem;
+    font-size: 1rem;
+    background: #f8f7ff;
+    margin-bottom: 0.5rem;
+}
+
+#settingsForm button {
+    width: 100%;
+    padding: 0.7rem;
+    background: linear-gradient(90deg, var(--pastel-purple), var(--pastel-blue));
+    color: white;
+    border: none;
+    border-radius: 1.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.2s;
+}
+
+#settingsForm button:hover {
+    background: linear-gradient(90deg, var(--pastel-blue), var(--pastel-purple));
+}
+
+#gotoPomodoroBtn{
+     border-radius: 1.2rem;
+     color: #a0c4ff;
+     background-color: #5f5f7a;
+}

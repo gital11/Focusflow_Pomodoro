@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pomodoro Landing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="main-container" style="text-align:center;">
+    <h1 style="color:var(--pastel-purple);">Welcome to Pomodoro!</h1>
+    <p style="color:var(--text-light);margin-bottom:2rem;">Boost your productivity with the Pomodoro technique.</p>
+    <button id="gotoPomodoroBtn" style="padding:1rem 2rem;font-size:1.2rem;">Go to Pomodoro Timer</button>
+</div>
+ <script>
+    // Check if user is logged in
+    const user = JSON.parse(sessionStorage.getItem('pomodoroUser'));
+    if (!user) {
+        window.location.href = "auth.html";
+    }
+    document.getElementById('gotoPomodoroBtn').onclick = function() {
+        sessionStorage.setItem('canAccessPomodoro', 'yes');
+        window.location.href = "index.html";
+    };
+</script>
+
+</body>
+</html>

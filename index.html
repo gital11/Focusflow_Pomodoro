@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-container" id="mainContainer" style="display:none;">
+        <header>
+            <h1>Focusflow Pomodoro   </h1>
+            <button id="settingsBtn" title="Settings">&#9881;</button>
+            <button id="logoutBtn" title="Logout" style="margin-left:10px;font-size:1.2rem;">&#x1F511;</button>
+        </header>
+        <div class="welcome" id="welcome"></div>
+        <div class="timer-section">
+            <div class="circle-timer">
+                <svg width="220" height="220">
+                    <circle cx="110" cy="110" r="100" stroke="#bdb2ff" stroke-width="10" fill="none"/>
+                    <circle id="progressCircle" cx="110" cy="110" r="100" stroke="#a0c4ff" stroke-width="10" fill="none" stroke-linecap="round" />
+                </svg>
+                <div class="timer-text" id="timerText">25:00</div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="startBtn">Start</button>
+            <button id="pauseBtn">Pause</button>
+            <button id="resetBtn">Reset</button>
+            
+       </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal" id="settingsModal">
+        <div class="modal-content">
+            <span class="close" id="closeSettings">&times;</span>
+            <h2>Settings</h2>
+            <form id="settingsForm">
+                <label>Study Duration (minutes):</label>
+                <input type="number" id="studyDuration" min="1" max="120" value="25">
+                <label>Break Duration (minutes):</label>
+                <input type="number" id="breakDuration" min="1" max="60" value="5">
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sound elements (hidden) -->
+    <audio id="startSound" src="https://cdn.pixabay.com/audio/2022/07/26/audio_124bfa3c7b.mp3"></audio>
+    <audio id="endSound" src="https://cdn.pixabay.com/audio/2022/07/26/audio_124bfa3c7b.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
